@@ -2,15 +2,29 @@ prompt = """
 Input: Create Directory dir
 Output: mkdir dir
 
-Input: clone oktopus directory
+Input: clone oktopus 
 Output: git clone https://github.com/albertsalgueda/oktopus
 
-Input: commit to github x
+Input: clone sentiment 
+Output: git clone https://github.com/albertsalgueda/sentiment
+
+Input: clone crypto bot 
+Output: git clone https://github.com/albertsalgueda/trade
+
+Input: clone detection 
+Output: git clone https://github.com/albertsalgueda/detection
+
+Input: push repo x
 Outpu: git commit -a -m'x' && git push origin main
 
 Input: update repo
 Output: git pull origin main
 
+Input: create test 
+Output: git checkout -b test && git commit -a -m'x' && git push origin test
+
+Input: test repo 
+Output: git checkout test && git commit -a -m'x' && git push origin test
 """
 
 template = """
@@ -38,7 +52,7 @@ while True:
     response = openai.Completion.create(
         engine="text-davinci-002",
         prompt = prompt,
-        temperature=0.9, #closer to 0 means just one correct answer, closer 1 if you want more creativity
+        temperature=0.0, #closer to 0 means just one correct answer, closer 1 if you want more creativity
         max_tokens=150
     )
     #print(response)
