@@ -1,6 +1,6 @@
 import openai
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 conversation = ""
 

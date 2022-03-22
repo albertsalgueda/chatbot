@@ -6,7 +6,7 @@ Input: clone oktopus directory
 Output: git clone https://github.com/albertsalgueda/oktopus
 
 Input: push to github x
-Outpu: git add . & git commit -m'x' & git push origin main
+Outpu: git commit -a -m'x' & git push origin main
 """
 
 template = """
@@ -15,7 +15,7 @@ Output: """
 
 import os, click, openai
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 conversation = ""
 
