@@ -2,15 +2,20 @@ prompt = """
 Input: Create Directory dir
 Output: mkdir dir
 
-Input: clone oktopus directory
+Input: clone oktopus 
 Output: git clone https://github.com/albertsalgueda/oktopus
 
-Input: commit to github x
+Input: push repo x
 Outpu: git commit -a -m'x' && git push origin main
 
 Input: update repo
 Output: git pull origin main
 
+Input: create branch
+Output: git checkout -b test
+
+Input: test repo
+Output: git commit -a -m'x' && git push origin test
 """
 
 template = """
@@ -38,7 +43,7 @@ while True:
     response = openai.Completion.create(
         engine="text-davinci-002",
         prompt = prompt,
-        temperature=0.9, #closer to 0 means just one correct answer, closer 1 if you want more creativity
+        temperature=0.1, #closer to 0 means just one correct answer, closer 1 if you want more creativity
         max_tokens=150
     )
     #print(response)
