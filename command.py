@@ -5,11 +5,23 @@ Output: mkdir dir
 Input: clone oktopus 
 Output: git clone https://github.com/albertsalgueda/oktopus
 
+Input: clone sentiment 
+Output: git clone https://github.com/albertsalgueda/sentiment
+
+Input: clone crypto bot 
+Output: git clone https://github.com/albertsalgueda/trade
+
+Input: clone detection 
+Output: git clone https://github.com/albertsalgueda/detection
+
 Input: push repo x
 Outpu: git commit -a -m'x' && git push origin main
 
 Input: update repo
 Output: git pull origin main
+
+Input: create test 
+Output: git checkout -b test && git commit -a -m'x' && git push origin test
 
 Input: test repo 
 Output: git checkout test && git commit -a -m'x' && git push origin test
