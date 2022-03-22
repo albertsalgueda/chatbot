@@ -5,8 +5,8 @@ Output: mkdir dir
 Input: clone oktopus directory
 Output: git clone https://github.com/albertsalgueda/oktopus
 
-Input: push to github x
-Outpu: git commit -a -m'x' & git push origin main
+Input: commit to github x
+Outpu: git commit -a -m'x' && git push origin main
 """
 
 template = """
