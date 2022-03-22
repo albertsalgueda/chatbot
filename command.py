@@ -1,5 +1,5 @@
 prompt = """
-Input: Create Directory
+Input: Create Directory dir
 Output: mkdir dir
 
 Input: clone oktopus directory
@@ -31,6 +31,9 @@ conversation = ""
 
 while True:
     request = input(click.style('nlsh>','red',bold=True))
+    if request.upper() == 'EXIT':
+        print('Thank you for using the Oktopus command line!')
+        break
     prompt += template.format(request)
     response = openai.Completion.create(
         engine="text-davinci-002",
