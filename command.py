@@ -7,6 +7,10 @@ Output: git clone https://github.com/albertsalgueda/oktopus
 
 Input: commit to github x
 Outpu: git commit -a -m'x' && git push origin main
+
+Input: update repo
+Output: git pull origin main
+
 """
 
 template = """
@@ -15,7 +19,13 @@ Output: """
 
 import os, click, openai
 
-openai.api_key = "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"
+with open('key.txt', 'r') as file:
+    OPENAI_API_KEY = file.read().rstrip()
+
+
+openai.organization = "org-loyyMW35uINGPaiOuTAd0zq8"
+openai.api_key = str(OPENAI_API_KEY)
+openai.Engine.list()
 
 conversation = ""
 
